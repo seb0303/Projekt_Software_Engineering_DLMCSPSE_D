@@ -23,7 +23,7 @@ public:
     QMap<int, QPair<QIcon, QString>> getAccounts();
     // Ruft ein bestimmtes Konto ab und gibt die Details als QMap zurücl
     QMap<QString, QVariant> getAccountDetails(int id);
-    // Speichert einen Datensatz in der Datenbank (neuer oder bearbeiteter Datensatz) und gibt die Id zurück
+    // Speichert einen Datensatz in der Datenbank (neuer oder bearbeiteter Datensatz) und gibt die ID des Accounts zurück
     bool saveAccount(QString& type, QMap<QString, QVariant>& form_data);
 
 private:
