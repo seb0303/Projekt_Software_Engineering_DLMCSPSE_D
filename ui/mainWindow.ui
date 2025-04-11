@@ -1,0 +1,1911 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QWidget" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1400</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1100</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>PennyWise</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../resources/resources.qrc">
+    <normaloff>:/logo/logo</normaloff>:/logo/logo</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">.frame_toolbar {
+	background: white;
+	border: none;
+	border-bottom: 1px solid #E3E3E3;
+}
+.frame_spacer {
+	background: #F4F4F4;
+	border: none;
+	border-bottom: 1px solid #E3E3E3;
+}
+.frame_sidebar
+{
+	background: #F4F4F4;
+	border: none;
+	border-right: 1px solid #E3E3E3;;
+}
+.frame_main {
+	background: white;
+	border: none;
+}
+.frame_content {
+	background: white;
+	border: none;
+	margin: 3px;
+}
+.frame_actions {
+	border: none;
+	background: white;
+}
+.frame_charts {
+	border: none;
+	background: white;
+}
+.lineEdit_search{
+	border-radius: 8px;
+	border: 1px solid #E3E3E3;
+	background: white;
+	color: gray;	
+	margin-right:  8px;
+}
+.label_h1{
+	margin-right: 6px;
+	color: black;
+}
+.pushButton_action {
+	border: none;
+	background: white;
+	color: black;
+}
+.pushButton_action::hover {
+	background: #F2F2F2;
+	color: black;
+}
+.pushButton_action_refresh {
+	border: none;
+	background: #F4F4F4;;
+	color: black;
+}
+.pushButton_action_refresh::hover {
+	background: white;
+	color: black;
+}
+.pushButton_action_reset_table{
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(241, 241, 241, 255), stop:1 rgba(255, 255, 255, 255));
+border: none;
+	border-radius: 3px;
+}
+.pushButton_action_sidebar {
+	border: none;
+	background: #F4F4F4;
+	color: black;
+	text-align: left;
+	padding-left: 20px;
+	margin-top: 16px;
+}
+
+.pushButton_action_sidebar::hover, .pushButton_action_reset_table::hover {
+	background: #EFEFEF;
+	color: black;
+}
+.radioBtn_chart_pie, .radioBtn_chart_bar {
+    padding-left: 3px;
+}
+
+.radioBtn_chart_pie::indicator, .radioBtn_chart_bar::indicator {
+    width: 22px;
+    height: 22px;
+}
+
+
+.radioBtn_chart_pie::indicator::unchecked {
+    image: url(&quot;:/icons/static/img/show_pie_chart.png&quot;);
+}
+
+.radioBtn_chart_bar::indicator::unchecked {
+    image: url(&quot;:/icons/static/img/show_bar_chart.png&quot;);
+}
+
+.radioBtn_chart_pie::indicator::checked {
+    image: url(&quot;:/icons/static/img/show_pie_chart.png&quot;);
+    border-bottom: 4px outset #DDDDDD;
+}
+
+.radioBtn_chart_bar::indicator::checked {
+    image: url(&quot;:/icons/static/img/show_bar_chart.png&quot;);  
+    border-bottom: 4px outset #DDDDDD;
+}
+.radioBtn_chart_bar:hover, .radioBtn_chart_pie:hover {
+	border-bottom: 4px outset #EFEFEF;;
+}
+QLabel {
+	color: black;
+}
+.lbl_sidebar {
+	font-weight: bold;
+	font-size: 12px;
+	padding-top: 20px;
+	margin-left: 16px;
+}
+QTreeWidget {
+	background: #F4F4F4;
+	border: none;;
+	color: black;
+	margin-left: 16px;
+}
+QTreeWidget::item {
+	color: black;
+	border:none;
+	background: #F4F4F4;
+}
+QTreeWidget::item:hover {
+	background: #EFEFEF;
+	color: black;
+}
+QTreeWidget::item:selected {
+	color: black;
+	border:none;
+	background: lightblue;
+}
+.lbl_stats {
+	color: black;
+	font-weight: bold;
+	font-size: 16px;
+}
+.frame_content_items {
+    background: qlineargradient(spread:pad, 
+        x1:0, y1:0, x2:1, y2:1, 
+        stop:0 rgba(241, 241, 241, 255), 
+        stop:0.5 rgba(209, 224, 230, 255), 
+        stop:1 rgba(245, 250, 251, 255));
+    border-radius: 10px;
+}
+.frame_content_items_childs {
+	background: transparent;
+	border: none;
+}
+.frame_table {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(241, 241, 241, 255), stop:1 rgba(255, 255, 255, 255));
+    border-radius: 10px;
+}
+.frame_status_sidebar {
+	background: transparent; 
+	border: none;
+	border-top: 1px solid #E3E3E3;
+}
+.frame_status {
+	background: transparent; 
+	border: none;
+	border-top: 1px solid #E3E3E3;
+}
+.frame_filter{
+	border: none;
+}
+
+QTableWidget, QTableView {
+alternate-background-color: white;
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, 
+                stop:0 rgba(241, 241, 241, 255), 
+                stop:1 rgba(255, 255, 255, 255));
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    selection-background-color: rgba(100, 149, 237, 100);
+    selection-color: white;
+    gridline-color: #ddd;
+    font-size: 14px;
+    color: black;
+}
+
+QTableWidget::item {
+    background-color: rgba(241, 241, 241, 255);
+}
+
+QTableWidget::viewport {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0,
+                                stop:0 rgba(241, 241, 241, 255),
+                                stop:1 rgba(255, 255, 255, 255));
+}
+QTableView {
+    background-color: rgba(241, 241, 241, 255); /* Setzt die Hintergrundfarbe */
+}
+
+QTableView::item {
+    background-color: transparent; /* Hintergrundfarbe der Items transparent lassen */
+}
+/* Header-Style */
+QHeaderView::section {
+    background-color: white;
+    border: 1px solid #dcdcdc;
+    padding: 4px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Auswahl von Zellen */
+QTableWidget::item:selected, QTableView::item:selected {
+    background-color: rgba(100, 149, 237, 180);
+    color: white;
+}
+
+/* Hover-Effekt für Zellen */
+QTableWidget::item:hover, QTableView::item:hover {
+    background-color: rgba(200, 200, 255, 100);
+}
+.comboBox_filter {
+	background: white;
+	color: black;
+}
+QComboBox QAbstractItemView {
+	background: white;
+	color: black;
+}
+
+/* Scrollbalken */
+QScrollBar:vertical {
+    border: none;
+    width: 12px;
+    background: rgba(241, 241, 241, 255);
+}
+
+ QScrollBar:horizontal {
+	border: none,;
+	background: rgba(241, 241, 241, 255);
+	height: 12px;
+}
+
+/* Scrollbar-Griff */
+QScrollBar::handle:vertical {
+    border-radius: 6px;
+    background: gray;
+    min-height: 20px;  /* Verhindert zu kleinen Handle */
+}
+QScrollBar::handle:horizontal {
+    border-radius: 6px;
+    background: gray;
+    min-width: 20px;  /* Verhindert zu kleinen Handle */
+}
+
+/* Hover-Effekt für den Griff */
+QScrollBar::handle:vertical:hover {
+    background: rgba(150, 150, 150, 200);
+}
+QScrollBar::handle:horizontal:hover {
+    background: rgba(150, 150, 150, 200);
+}
+
+/* Entfernt die kleinen Pfeile an den Enden */
+QScrollBar::add-line, QScrollBar::sub-line {
+    border: none;
+    background: rgba(241, 241, 241, 255);
+    width: 0px;
+    height: 0px;
+}
+QGraphicsWidget {
+	background: transparent;
+}
+QChart {
+	background: transparent;
+}</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout_3">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QFrame" name="frame_sidebar">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>300</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="sizeIncrement">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <property name="class" stdset="0">
+        <string>frame_sidebar</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="leftMargin">
+         <number>9</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QFrame" name="frame_spacer">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Shape::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Shadow::Raised</enum>
+          </property>
+          <property name="class" stdset="0">
+           <string>frame_spacer</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="maximumSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>PennyWise Logo</string>
+             </property>
+             <property name="statusTip">
+              <string>PennyWise Logo</string>
+             </property>
+             <property name="whatsThis">
+              <string>PennyWise Logo</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="../resources/resources.qrc">:/logo/logo</pixmap>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+             <property name="class" stdset="0">
+              <string>logo</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_h1">
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>PennyWise</string>
+             </property>
+             <property name="class" stdset="0">
+              <string>label_h1</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_action_overview_sidebar">
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="toolTip">
+           <string>Zeige Übersicht über alle Konten</string>
+          </property>
+          <property name="statusTip">
+           <string>Zeige Übersicht über alle Konten</string>
+          </property>
+          <property name="whatsThis">
+           <string>Zeige Übersicht über alle Konten</string>
+          </property>
+          <property name="text">
+           <string>Übersicht</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../resources/resources.qrc">
+            <normaloff>:/icons/static/img/show_overview.png</normaloff>:/icons/static/img/show_overview.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>22</width>
+            <height>22</height>
+           </size>
+          </property>
+          <property name="class" stdset="0">
+           <string>pushButton_action_sidebar</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbl_accounts">
+          <property name="text">
+           <string>Konten</string>
+          </property>
+          <property name="class" stdset="0">
+           <string>lbl_sidebar</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTreeWidget" name="treeWidget_account">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>1</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>55</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="sizeIncrement">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="cursor" stdset="0">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="animated">
+           <bool>true</bool>
+          </property>
+          <attribute name="headerVisible">
+           <bool>false</bool>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </column>
+          <item>
+           <property name="text">
+            <string>Alle Konten</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/icons/static/img/label_savings.svg</normaloff>:/icons/static/img/label_savings.svg</iconset>
+           </property>
+           <item>
+            <property name="text">
+             <string>test</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../resources/resources.qrc">
+              <normaloff>:/icons/static/img/label_savings.svg</normaloff>:/icons/static/img/label_savings.svg</iconset>
+            </property>
+           </item>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbl_category">
+          <property name="text">
+           <string>Kategorien</string>
+          </property>
+          <property name="class" stdset="0">
+           <string>lbl_sidebar</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTreeWidget" name="treeWidget_category">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>3</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="cursor" stdset="0">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="animated">
+           <bool>true</bool>
+          </property>
+          <attribute name="headerVisible">
+           <bool>false</bool>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </column>
+          <item>
+           <property name="text">
+            <string>unkategorisiert</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/icons/static/img/label_category.svg</normaloff>:/icons/static/img/label_category.svg</iconset>
+           </property>
+           <item>
+            <property name="text">
+             <string>test</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../resources/resources.qrc">
+              <normaloff>:/icons/static/img/label_category.svg</normaloff>:/icons/static/img/label_category.svg</iconset>
+            </property>
+           </item>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::MinimumExpanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QFrame" name="frame_status">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>23</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>23</height>
+           </size>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LayoutDirection::LeftToRight</enum>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Shape::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Shadow::Raised</enum>
+          </property>
+          <property name="class" stdset="0">
+           <string>frame_status_sidebar</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_10">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <spacer name="horizontalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_action_refresh_all">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="toolTip">
+              <string>Alle Umsätze aktualisieren und Datenbank neu laden</string>
+             </property>
+             <property name="statusTip">
+              <string>Alle Umsätze aktualisieren und Datenbank neu laden</string>
+             </property>
+             <property name="whatsThis">
+              <string>Alle Umsätze aktualisieren und Datenbank neu laden</string>
+             </property>
+             <property name="accessibleName">
+              <string>Alle Umsätze aktualisieren und Datenbank neu laden</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Alle Umsätze aktualisieren und Datenbank neu laden</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="../resources/resources.qrc">
+               <normaloff>:/icons/static/img/sync_all.png</normaloff>:/icons/static/img/sync_all.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="class" stdset="0">
+              <string>pushButton_action_refresh</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="frame_main">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>3</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <property name="class" stdset="0">
+        <string>frame_main</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="spacing">
+         <number>6</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QFrame" name="frame_toolbar">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Shape::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Shadow::Raised</enum>
+          </property>
+          <property name="class" stdset="0">
+           <string>frame_toolbar</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>6</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>6</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QFrame" name="frame_actions">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Shape::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Shadow::Raised</enum>
+             </property>
+             <property name="class" stdset="0">
+              <string>frame_actions</string>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>6</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>6</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QPushButton" name="pushButton_action_add_transaction">
+                <property name="minimumSize">
+                 <size>
+                  <width>160</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>160</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="toolTip">
+                 <string>Umsatz hinzufügen</string>
+                </property>
+                <property name="statusTip">
+                 <string>Umsatz hinzufügen</string>
+                </property>
+                <property name="whatsThis">
+                 <string>Umsatz hinzufügen</string>
+                </property>
+                <property name="accessibleName">
+                 <string>Konten verwalten</string>
+                </property>
+                <property name="text">
+                 <string>Umsatz hinzufügen</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="../resources/resources.qrc">
+                  <normaloff>:/icons/static/img/add_transaction.png</normaloff>:/icons/static/img/add_transaction.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>22</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="class" stdset="0">
+                 <string>pushButton_action</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_action_account">
+                <property name="minimumSize">
+                 <size>
+                  <width>160</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>160</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="toolTip">
+                 <string>Konten verwalten</string>
+                </property>
+                <property name="statusTip">
+                 <string>Konten verwalten</string>
+                </property>
+                <property name="whatsThis">
+                 <string>Konten verwalten</string>
+                </property>
+                <property name="accessibleName">
+                 <string>Konten verwalten</string>
+                </property>
+                <property name="text">
+                 <string>Konten verwalten</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="../resources/resources.qrc">
+                  <normaloff>:/icons/static/img/add_account.png</normaloff>:/icons/static/img/add_account.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>22</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="class" stdset="0">
+                 <string>pushButton_action</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_action_category">
+                <property name="minimumSize">
+                 <size>
+                  <width>160</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>160</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="toolTip">
+                 <string>Kategorien verwalten</string>
+                </property>
+                <property name="statusTip">
+                 <string>Kategorien verwalten</string>
+                </property>
+                <property name="whatsThis">
+                 <string>Kategorien verwalten</string>
+                </property>
+                <property name="accessibleName">
+                 <string>Konten verwalten</string>
+                </property>
+                <property name="text">
+                 <string>Kategorien verwalten</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="../resources/resources.qrc">
+                  <normaloff>:/icons/static/img/add_category.png</normaloff>:/icons/static/img/add_category.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>22</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="class" stdset="0">
+                 <string>pushButton_action</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_action_db">
+                <property name="minimumSize">
+                 <size>
+                  <width>160</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>160</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="toolTip">
+                 <string>Datenbanken verwalten</string>
+                </property>
+                <property name="statusTip">
+                 <string>Datenbanken verwalten</string>
+                </property>
+                <property name="whatsThis">
+                 <string>Datenbanken verwalten</string>
+                </property>
+                <property name="accessibleName">
+                 <string>Datenbanken verwalten</string>
+                </property>
+                <property name="accessibleDescription">
+                 <string>Datenbanken verwalten</string>
+                </property>
+                <property name="text">
+                 <string>Datenbank verwalten</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="../resources/resources.qrc">
+                  <normaloff>:/icons/static/img/add_database.png</normaloff>:/icons/static/img/add_database.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>22</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="class" stdset="0">
+                 <string>pushButton_action</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame_charts_selection">
+             <property name="frameShape">
+              <enum>QFrame::Shape::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Shadow::Raised</enum>
+             </property>
+             <property name="class" stdset="0">
+              <string>frame_charts</string>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>3</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>3</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <spacer name="horizontalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="radioButton_barChart">
+                <property name="minimumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="toolTip">
+                 <string>Zeige Balkendiagramm</string>
+                </property>
+                <property name="statusTip">
+                 <string>Zeige Balkendiagramm</string>
+                </property>
+                <property name="whatsThis">
+                 <string>Zeige Balkendiagramm</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>22</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+                <property name="class" stdset="0">
+                 <string>radioBtn_chart_bar</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="radioButton_pieChart">
+                <property name="minimumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="toolTip">
+                 <string>Zeige Kuchendiagramm</string>
+                </property>
+                <property name="statusTip">
+                 <string>Zeige Kuchendiagramm</string>
+                </property>
+                <property name="whatsThis">
+                 <string>Zeige Kuchendiagramm</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>22</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="class" stdset="0">
+                 <string>radioBtn_chart_pie</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_search">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>1</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>200</width>
+               <height>26</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>250</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>8</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::FocusPolicy::ClickFocus</enum>
+             </property>
+             <property name="acceptDrops">
+              <bool>false</bool>
+             </property>
+             <property name="maxLength">
+              <number>30</number>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+             <property name="placeholderText">
+              <string>Suchen...</string>
+             </property>
+             <property name="class" stdset="0">
+              <string>lineEdit_search</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_action_backup">
+             <property name="minimumSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="toolTip">
+              <string>Datenbank exportieren</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="../resources/resources.qrc">
+               <normaloff>:/icons/static/img/label_backup.png</normaloff>:/icons/static/img/label_backup.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>22</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="class" stdset="0">
+              <string>pushButton_action</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_action_export">
+             <property name="minimumSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="toolTip">
+              <string>Datensätze aus Datenbank exportieren</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="../resources/resources.qrc">
+               <normaloff>:/icons/static/img/label_export.png</normaloff>:/icons/static/img/label_export.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>22</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="class" stdset="0">
+              <string>pushButton_action</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_help">
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="toolTip">
+              <string>Hilfe</string>
+             </property>
+             <property name="statusTip">
+              <string>Hilfe</string>
+             </property>
+             <property name="whatsThis">
+              <string>Hilfe</string>
+             </property>
+             <property name="accessibleName">
+              <string>Hilfe</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Hilfe</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="../resources/resources.qrc">
+               <normaloff>:/icons/static/img/help.png</normaloff>:/icons/static/img/help.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>22</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="class" stdset="0">
+              <string>pushButton_action</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="frame_content">
+          <property name="focusPolicy">
+           <enum>Qt::FocusPolicy::TabFocus</enum>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Shape::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Shadow::Raised</enum>
+          </property>
+          <property name="class" stdset="0">
+           <string>frame_content</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <property name="spacing">
+            <number>6</number>
+           </property>
+           <property name="leftMargin">
+            <number>1</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>1</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QFrame" name="frame_stats">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>1</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>350</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Shape::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Shadow::Raised</enum>
+             </property>
+             <property name="class" stdset="0">
+              <string>frame_content_items</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <item>
+               <widget class="QFrame" name="frame_sum">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Shape::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Shadow::Raised</enum>
+                </property>
+                <property name="class" stdset="0">
+                 <string>frame_content_items_childs</string>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_7">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="lbl_account_selection">
+                   <property name="toolTip">
+                    <string>Filterkriterien Konten</string>
+                   </property>
+                   <property name="statusTip">
+                    <string>Filterkriterien Konten</string>
+                   </property>
+                   <property name="whatsThis">
+                    <string>Filterkriterien Konten</string>
+                   </property>
+                   <property name="accessibleName">
+                    <string>Filterkriterien Konten</string>
+                   </property>
+                   <property name="accessibleDescription">
+                    <string>Filterkriterien Konten</string>
+                   </property>
+                   <property name="lineWidth">
+                    <number>1</number>
+                   </property>
+                   <property name="text">
+                    <string>Alle Konten</string>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>false</bool>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                   </property>
+                   <property name="class" stdset="0">
+                    <string>lbl_stats</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_2">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_2">
+                   <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Aktueller Saldo:   &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="margin">
+                    <number>6</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="lbl_total">
+                   <property name="toolTip">
+                    <string>Aktueller Saldo</string>
+                   </property>
+                   <property name="statusTip">
+                    <string>Aktueller Saldo</string>
+                   </property>
+                   <property name="whatsThis">
+                    <string>Aktueller Saldo</string>
+                   </property>
+                   <property name="accessibleName">
+                    <string>Aktueller Saldo</string>
+                   </property>
+                   <property name="accessibleDescription">
+                    <string>Aktueller Saldo nach Filterkriterien</string>
+                   </property>
+                   <property name="text">
+                    <string>10.000 EUR</string>
+                   </property>
+                   <property name="class" stdset="0">
+                    <string>lbl_stats</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frame_charts">
+                <property name="frameShape">
+                 <enum>QFrame::Shape::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Shadow::Raised</enum>
+                </property>
+                <property name="class" stdset="0">
+                 <string>frame_content_items_childs</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame_table">
+             <property name="frameShape">
+              <enum>QFrame::Shape::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Shadow::Raised</enum>
+             </property>
+             <property name="class" stdset="0">
+              <string>frame_table</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QFrame" name="frame_filter">
+                <property name="frameShape">
+                 <enum>QFrame::Shape::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Shadow::Raised</enum>
+                </property>
+                <property name="class" stdset="0">
+                 <string>frame_filter</string>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_9">
+                 <item>
+                  <widget class="QPushButton" name="pushButton_action_resetTable">
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="toolTip">
+                    <string>Tabellenbreite zurücksetzen</string>
+                   </property>
+                   <property name="statusTip">
+                    <string>Tabellenbreite zurücksetzen</string>
+                   </property>
+                   <property name="whatsThis">
+                    <string>Tabellenbreite zurücksetzen</string>
+                   </property>
+                   <property name="accessibleName">
+                    <string>Tabellenbreite zurücksetzen</string>
+                   </property>
+                   <property name="accessibleDescription">
+                    <string>Tabellenbreite zurücksetzen</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="../resources/resources.qrc">
+                     <normaloff>:/icons/static/img/reset_table.png</normaloff>:/icons/static/img/reset_table.png</iconset>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>20</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="class" stdset="0">
+                    <string>pushButton_action_reset_table</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_4">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="lbl_DateFilter">
+                   <property name="minimumSize">
+                    <size>
+                     <width>75</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Zeitraum:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox_time_period">
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="class" stdset="0">
+                    <string>comboBox_filter</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QTableWidget" name="table_transactions">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="layoutDirection">
+                 <enum>Qt::LayoutDirection::LeftToRight</enum>
+                </property>
+                <property name="autoFillBackground">
+                 <bool>false</bool>
+                </property>
+                <property name="editTriggers">
+                 <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                </property>
+                <property name="alternatingRowColors">
+                 <bool>true</bool>
+                </property>
+                <property name="showGrid">
+                 <bool>true</bool>
+                </property>
+                <property name="gridStyle">
+                 <enum>Qt::PenStyle::SolidLine</enum>
+                </property>
+                <property name="sortingEnabled">
+                 <bool>true</bool>
+                </property>
+                <property name="wordWrap">
+                 <bool>false</bool>
+                </property>
+                <property name="cornerButtonEnabled">
+                 <bool>false</bool>
+                </property>
+                <attribute name="horizontalHeaderCascadingSectionResizes">
+                 <bool>true</bool>
+                </attribute>
+                <attribute name="horizontalHeaderDefaultSectionSize">
+                 <number>140</number>
+                </attribute>
+                <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                 <bool>true</bool>
+                </attribute>
+                <attribute name="horizontalHeaderStretchLastSection">
+                 <bool>true</bool>
+                </attribute>
+                <attribute name="verticalHeaderCascadingSectionResizes">
+                 <bool>true</bool>
+                </attribute>
+                <row>
+                 <property name="text">
+                  <string>2</string>
+                 </property>
+                </row>
+                <row/>
+                <column>
+                 <property name="text">
+                  <string>Aktion</string>
+                 </property>
+                 <property name="foreground">
+                  <brush brushstyle="NoBrush">
+                   <color alpha="255">
+                    <red>170</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                   </color>
+                  </brush>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Datum</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Empfänger</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Verwendungszweck</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Kategorie</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Unterkategorie</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Betrag</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Währung</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Konto</string>
+                 </property>
+                </column>
+                <item row="0" column="1">
+                 <property name="text">
+                  <string>01.01.2024</string>
+                 </property>
+                </item>
+                <item row="0" column="2">
+                 <property name="text">
+                  <string>SU</string>
+                 </property>
+                </item>
+                <item row="0" column="3">
+                 <property name="text">
+                  <string>SU</string>
+                 </property>
+                </item>
+                <item row="0" column="4">
+                 <property name="text">
+                  <string>undefined</string>
+                 </property>
+                </item>
+                <item row="0" column="6">
+                 <property name="text">
+                  <string>-200</string>
+                 </property>
+                </item>
+                <item row="0" column="8">
+                 <property name="text">
+                  <string>1</string>
+                 </property>
+                </item>
+                <item row="1" column="1">
+                 <property name="text">
+                  <string>01.01.2024</string>
+                 </property>
+                </item>
+                <item row="1" column="2">
+                 <property name="text">
+                  <string>SU</string>
+                 </property>
+                </item>
+                <item row="1" column="3">
+                 <property name="text">
+                  <string>SU</string>
+                 </property>
+                </item>
+                <item row="1" column="4">
+                 <property name="text">
+                  <string>undefined</string>
+                 </property>
+                </item>
+                <item row="1" column="6">
+                 <property name="text">
+                  <string>-100</string>
+                 </property>
+                </item>
+                <item row="1" column="8">
+                 <property name="text">
+                  <string>1</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame_status_content">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Shape::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Shadow::Raised</enum>
+             </property>
+             <property name="class" stdset="0">
+              <string>frame_status</string>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_8">
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="lbl_status">
+                <property name="font">
+                 <font>
+                  <pointsize>9</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>✅ Alles okay</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lbl_time">
+                <property name="font">
+                 <font>
+                  <pointsize>9</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Initialisiere...</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

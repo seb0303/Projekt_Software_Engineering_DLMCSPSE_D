@@ -1,0 +1,30 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>static/img/add_account.png</file>
+        <file>static/img/add_category.png</file>
+        <file>static/img/add_database.png</file>
+        <file>static/img/add_transaction.png</file>
+        <file>static/img/help.png</file>
+        <file>static/img/label_category.svg</file>
+        <file>static/img/label_savings.svg</file>
+        <file>static/img/show_bar_chart.png</file>
+        <file>static/img/show_overview.png</file>
+        <file>static/img/show_pie_chart.png</file>
+        <file>static/img/show_table_chart.png</file>
+        <file>static/img/sync_all.png</file>
+        <file>static/img/reset_table.png</file>
+        <file>static/img/add.svg</file>
+        <file>static/img/delete.svg</file>
+        <file>static/img/edit.svg</file>
+        <file>static/img/tag.svg</file>
+        <file>static/img/img_not_found.svg</file>
+        <file>static/img/label_backup.png</file>
+        <file>static/img/label_export.png</file>
+    </qresource>
+    <qresource prefix="/logo">
+        <file alias="logo">static/img/PENNYWISE.png</file>
+    </qresource>
+    <qresource prefix="/help">
+        <file>static/help/help.html</file>
+    </qresource>
+</RCC>
