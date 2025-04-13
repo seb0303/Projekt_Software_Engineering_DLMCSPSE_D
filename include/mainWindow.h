@@ -30,6 +30,42 @@
 namespace Ui {
 class MainWindow;
 }
+/**
+ * @class MainWindow
+ * @brief Hauptfenster und zentrale Steuerkomponente der PennyWise-Anwendung.
+ *
+ * Die Klasse MainWindow bildet das Hauptfenster der Anwendung PennyWise und
+ * stellt die zentrale Benutzeroberfläche für den Zugriff auf alle Kernfunktionen bereit.
+ * Sie organisiert den Zugriff auf Dialoge, verwaltet Statusmeldungen, koordiniert
+ * die Darstellung und ruft Daten aus der Datenbank über das Zustandsobjekt @class StateMgr ab.
+ *
+ * Das MainWindow dient als Einstiegspunkt nach dem Laden oder Erstellen einer Datenbank (@class WelcomeScreen oder @class AddDatabaseDialog)
+ * und hält Referenzen auf alle logischen und visuellen Komponenten:
+ * - Transaktionen hinzufügen, bearbeiten, löschen
+ * - Kategorien und Konten verwalten
+ * - Finanzdaten filtern und durchsuchen
+ * - Exportfunktionen starten und Backups durchführen
+ * - Statistische Diagramme anzeigen
+ * - Systemstatus darstellen
+ *
+ * Die Klasse enthält Initialisierungslogik für die UI-Elemente sowie
+ * Signal-Slot-Verbindungen zur Reaktion auf Benutzeraktionen.
+ *
+ * Features:
+ * - Navigation zu allen Funktionalitäten über Buttons, Menü oder UI-Steuerelemente
+ * - Echtzeit-Aktualisierung des Statuslabels über @class Status_Log
+ * - Start und Verwaltung aller sekundären Dialoge (Accounts, Transactions, Exports usw.)
+ * - Verwaltung und Übergabe der aktiven Datenbankverbindung an andere Komponenten
+ *
+ * @note Die grafische Oberfläche ist in einer `.ui`-Datei gestaltet und wird dynamisch geladen.
+ *
+ * @param parent Zeiger auf das übergeordnete QWidget (nullptr -> kein parent, Speicherverwaltung manuell notwendig über Dekonstruktor)
+ * @param path Dateipfad zur geladenen Datenbank
+ * @param database_name Name der Datenbankdatei
+ * @param passwordRequired Gibt an, ob beim Öffnen der Datenbank ein Passwort abgefragt wurde
+ * @param password Optional übergebenes Passwort für verschlüsselte Datenbanken
+ * @param connection_name default für benutzerspezifische Datenbank, demo für Demodatenbank
+ */
 
 class MainWindow : public QWidget
 {

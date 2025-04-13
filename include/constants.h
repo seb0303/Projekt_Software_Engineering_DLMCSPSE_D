@@ -4,6 +4,25 @@
 #include <QString>
 #include <QDate>
 
+/**
+ * @namespace constants
+ * @brief Stellt zentrale, global verfügbare Konstanten für die PennyWise-Anwendung bereit.
+ *
+ * Dieser Namensraum enthält anwendungsweite Konstanten, die z. B. für Datenbankpfade,
+ * Dateiendungen, Tabellennamen, Konfigurationsdateien, Debug-Modi und Standardwerte
+ * verwendet werden.
+ *
+ * Die Trennung der Konstanten in diesen Namensraum sorgt für eine klare Struktur,
+ * Wiederverwendbarkeit und einfache Wartung.
+ *
+ * Features:
+ * - Pfade zur Standard- und Demo-Datenbank
+ * - Dateierweiterungen und Treiberkonfiguration
+ * - Tabellen- und Attributnamen für SQLite
+ * - Defaultwerte wie Standardwährung, Startsaldo, Zeitfenster
+ *
+ */
+
 namespace constants {
 
     constexpr bool DEBUG = true;

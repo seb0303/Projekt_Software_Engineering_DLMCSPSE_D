@@ -22,6 +22,27 @@ class CategoryDialog;
 namespace core {
 class StateMgr;
 }
+/**
+ * @class CategoryDialog
+ * @brief Stellt ein Dialogfenster zur Anzeige und Verwaltung von Kategorien bereit.
+ *
+ * Diese Klasse stellt die Benutzeroberfläche für das Anlegen, Bearbeiten und Löschen
+ * von Kategorien und Subkategorien bereit, die für die Organisation von Transaktionen verwendet werden.
+ *
+ * Der Dialog ist in Tabs und Listen untergliedert und kommuniziert mit der
+ * Logikklasse @class Category zur Durchführung von Aktionen.
+ *
+ * Features:
+ * - Auswahl bestehender Kategorien
+ * - Bearbeitung und Hierarchisierung über Subkategorien
+ * - Integration in das zentrale Zustandsmanagement @class StateMgr
+ *
+ * @note Die grafische Oberfläche ist in einer `.ui`-Datei gestaltet und wird dynamisch geladen.
+ *
+ * @param parent Zeiger auf das übergeordnete QWidget (@class MainWindow)
+ * @param ptrStateMgr Zeiger auf das zentrale Zustandsobjekt (@class StateMgr)
+ */
+
 class CategoryEditDialog : public QWidget
 {
     Q_OBJECT

@@ -13,6 +13,30 @@
 namespace core {
 class StateMgr;
 }
+/**
+ * @class Account
+ * @brief Modelliert ein Bankkonto mit Name, Währung, Saldo und weiteren zugehörigen Eigenschaften.
+ *
+ * Diese Klasse verwaltet Kontodaten innerhalb von PennyWise.
+ * Sie ermöglicht das Abrufen, Anzeigen und Speichern von Kontoinformationen
+ * in der zugrunde liegenden SQLite-Datenbank.
+ *
+ * Die Klasse greift auf die Datenbank über eine `StateMgr`-Instanz zu
+ * und kapselt die Validierung sowie Datenverarbeitung.
+ *
+ * Funktionen:
+ * - Abrufen aller gespeicherten Konten
+ * - Laden eines einzelnen Kontos anhand seiner ID
+ * - Validierung und Speichern eines neuen oder bearbeiteten Kontos
+ *
+ * @note Verwendet Qt-spezifische Datentypen wie `QMap`, `QVariant`, `QIcon`.
+ *
+ * @param parent Zeiger auf das übergeordnete QWidget (@class AccountDialog)
+ * @param stateMgr Zeiger (@class StateMgr) für die Verwaltung der UI und States
+ *
+ * @see StateMgr
+ */
+
 class Account : public QObject
 {
     Q_OBJECT

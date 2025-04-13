@@ -19,6 +19,28 @@ class DatabaseDialog;
 namespace core {
 class StateMgr;
 }
+/**
+ * @class DatabaseDialog
+ * @brief Stellt einen Dialog zur Bearbeitung der aktuellen Datenbankeigenschaften bereit.
+ *
+ * Diese Klasse ermöglicht dem Benutzer, Metadaten der aktuell geöffneten Datenbank
+ * (z. B. Name, Währung, Passwort) einzusehen und zu ändern. Sie bietet darüber hinaus
+ * Funktionen zum Zurücksetzen des Passworts sowie zur Löschung der Datenbankdatei (nicht implementiert).
+ *
+ * Die Eingaben werden validiert und über @class StateMgr mit der zugrunde liegenden Datenbank synchronisiert.
+ *
+ * Features:
+ * - Anzeigen von Metadaten wie Erstellungsdatum und Datenbank-ID
+ * - Passwortänderung mit Validierung der Eingabefelder (nicht implementiert)
+ * - Löschen der aktuellen Datenbankinstanz
+ * - Auswahl einer neuen Standardwährung
+ *
+ * @note Die grafische Oberfläche ist in einer `.ui`-Datei gestaltet und wird dynamisch geladen.
+ *
+ * @param parent Zeiger auf das übergeordnete QWidget (@class MainWindow)
+ * @param ptrStateMgr Zeiger auf das zentrale Zustandsobjekt (@class StateMgr)
+ */
+
 class DatabaseDialog : public QWidget
 {
     Q_OBJECT

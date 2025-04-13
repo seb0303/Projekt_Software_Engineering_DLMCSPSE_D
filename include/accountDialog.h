@@ -23,6 +23,27 @@ class StateMgr;
 class IconPickerDialog;
 
 class Account;
+/**
+ * @class AccountDialog
+ * @brief Stellt einen Dialog zur Erstellung oder Bearbeitung von Bankkonten bereit.
+ *
+ * Diese Klasse bildet die Benutzerschnittstelle für das Erstellen, Bearbeiten und Validieren
+ * von Konten (z. B. Girokonto, Sparkonto, Kreditkarte).
+ *
+ * Der Dialog sammelt Benutzerangaben wie Kontoname, Währung und Startsaldo
+ * und übergibt sie an die Datenbanklogik (@class Account) zur Speicherung.
+ *
+ * Features:
+ * - Eingabeformular für Kontodaten
+ * - Fehlerprüfung und Feedback bei ungültigen Eingaben
+ * - Integration in das zentrale Zustandsmanagement (`StateMgr`)
+ *
+ * @note Die UI ist in einer `.ui`-Datei gestaltet und wird zur Laufzeit geladen.
+ *
+ * @param parent Zeiger auf das übergeordnete QWidget (@class MainWindow)
+ * @param stateMgr Zeiger (@class StateMgr) für die Verwaltung der UI und States
+ */
+
 class AccountDialog : public QWidget
 {
     Q_OBJECT

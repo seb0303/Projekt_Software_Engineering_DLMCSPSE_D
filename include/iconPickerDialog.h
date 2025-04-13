@@ -21,6 +21,28 @@ class IconPickerDialog;
 namespace core {
 class StateMgr;
 }
+/**
+ * @class IconPickerDialog
+ * @brief Stellt eine Dialogoberfläche zur Auswahl von Symbolen für Kategorien bereit.
+ *
+ * Diese Klasse ermöglicht dem Benutzer, ein Symbol (Icon) aus einer vordefinierten Liste auszuwählen,
+ * welches dann z. B. einer Kategorie oder einem Konto zugewiesen werden kann.
+ *
+ * Die Icons werden dynamisch aus einer Datenquelle geladen und in einem scrollbaren Raster angezeigt.
+ * Die Auswahl wird dem aufrufenden Widget (z. B. einem QLabel) übergeben.
+ *
+ * Features:
+ * - Anzeige von Icons mit IDs zur Auswahl
+ * - Verknüpfung zur zentralen Zustandsverwaltung @class StateMgr
+ * - Rückgabe der ausgewählten ID an das aufrufende Widget
+ *
+ * @note Die grafische Oberfläche ist in einer `.ui`-Datei gestaltet und wird dynamisch geladen.
+ *
+ * @param parent Zeiger auf das übergeordnete QWidget (@class CategoryEditDialog oder @class AccountDialog)
+ * @param ptrStateMgr Zeiger auf das zentrale Zustandsobjekt (@class StateMgr)
+ * @param lbl_icon Pointer auf ein Label der aufrufenden Parent-Instanz, das das aktuell gewählte Symbol nach erfolgter Auswahl anzeigt
+ */
+
 class IconPickerDialog : public QWidget
 {
     Q_OBJECT

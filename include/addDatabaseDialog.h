@@ -23,6 +23,26 @@
 namespace Ui {
 class AddDatabaseDialog;
 }
+/**
+ * @class AddDatabaseDialog
+ * @brief Stellt ein Eingabeformular zur Erstellung einer neuen Datenbank bereit.
+ *
+ * Diese Klasse bildet die Benutzerschnittstelle zum Erstellen einer neuen PennyWise-Datenbankdatei
+ * inklusive Startkonto, Währungsauswahl und optionalem Passwortschutz (Verschlüsselung noch nicht implementiert).
+ *
+ * Der Dialog sammelt Benutzereingaben wie Datenbankname, Passwort und Startsaldo
+ * und übergibt sie an die Initialisierungslogik der Anwendung. Zusätzlich wird die Datenbankweite Währung konfiguriert.
+ *
+ * Features:
+ * - Überprüfung der Passwortfelder auf Übereinstimmung
+ * - Dropdown-Menü zur Währungsauswahl
+ * - Validierung von Startsaldo und Datenbanknamen
+ *
+ * @note Die grafische Oberfläche ist in einer `.ui`-Datei gestaltet und wird dynamisch geladen.
+ *       Die erzeugten Datenbanken werden als SQLite-Dateien gespeichert.
+ *
+ * @param parent Zeiger auf das übergeordnete QWidget (nullptr -> kein Parent, Speichermanagement manuell)
+ */
 
 class AddDatabaseDialog : public QWidget
 {

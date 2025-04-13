@@ -18,6 +18,28 @@
 namespace core {
 class StateMgr;
 }
+/**
+ * @class Chart
+ * @brief Stellt die grafische Visualisierung von Finanzdaten als Balken- oder Kreisdiagramm bereit.
+ *
+ * Die Klasse Chart kapselt die Erstellung und Darstellung von Diagrammen zur Analyse
+ * finanzieller Transaktionen innerhalb der Anwendung PennyWise.
+ * Unterstützt werden Balken- und Kreisdiagramme.
+ *
+ * Die Diagramme visualisieren z. B. Ausgaben nach Kategorien oder Zeiträumen
+ * und greifen dafür auf Daten aus der SQLite-Datenbank zu.
+ *
+ * Features:
+ * - Generierung von Balken- und Kreisdiagrammen
+ * - Unterstützung verschiedener Visualisierungstypen (z. B. monatlich, kategoriebasiert)
+ * - Dynamische Erzeugung eines eingebetteten `QWidget` mit Chart
+ *
+ * @note Diese Klasse verwendet das QtCharts-Modul sowie `QHash`, `QMap`, `QChartView`.
+ *
+ * @param parent Zeiger auf das übergeordnete QWidget (@class MainWindow)
+ * @param type Diagrammtyp als String (z. B. „bar“, „pie“)
+ * @param ptrStateMgr Zeiger auf das zentrale Zustandsobjekt (@class StateMgr)
+ */
 
 class Chart : public QWidget
 {

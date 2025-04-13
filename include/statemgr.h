@@ -31,6 +31,28 @@
 class MainWindow;
 
 namespace core {
+/**
+ * @class StateMgr
+ * @brief Verwaltet den globalen Zustand der Anwendung PennyWise.
+ *
+ * Die Klasse StateMgr kapselt alle Informationen und Operationen,
+ * die für die Darstellung und Verarbeitung des aktuellen Zustands der Anwendung relevant sind.
+ * Dazu gehören:
+ * - Aktive Filtereinstellungen (z. B. Zeiträume, Konten, Kategorien)
+ * - Verknüpfung zur aktuell geöffneten Datenbank
+ * - Anbindung an das Hauptfenster (MainWindow) zur Aktualisierung der Benutzeroberfläche
+ *
+ * Die Klasse wird typischerweise beim Start der Anwendung initialisiert und bleibt während der gesamten Laufzeit aktiv.
+ *
+ *
+ * @note Diese Klasse verwendet Qt-spezifische Datentypen und basiert auf QObject zur Integration in das Signal-Slot-System.
+ *
+ * @param parent Zeiger auf das übergeordnete QWidget (MainWindow)
+ * @param db Zeiger auf die geöffnete Datenbankinstanz
+ *
+ * @see MainWindow, db::Database
+ */
+
 class StateMgr : public QObject
 {
     Q_OBJECT

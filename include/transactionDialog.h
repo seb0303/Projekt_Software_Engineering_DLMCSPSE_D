@@ -24,6 +24,28 @@ class mainWindow;
 namespace core {
 class StateMgr;
 }
+/**
+ * @class TransactionDialog
+ * @brief Dialogfenster zum Erstellen und Bearbeiten von Transaktionen.
+ *
+ * Diese Klasse stellt die Benutzeroberfläche für die Eingabe und Bearbeitung
+ * von Transaktionen (Einnahmen/Ausgaben) bereit. Sie verknüpft die visuelle Erfassung
+ * mit der Logik aus der Klasse @class Transaction.
+ *
+ * Benutzer geben hier Betrag, Datum, Kategorie, Konto, Empfänger und Verwendungszweck ein.
+ * Anschließend erfolgt eine Validierung der Eingaben und Übergabe an die Datenbanklogik.
+ *
+ * Features:
+ * - Eingabefelder für alle Transaktionsattribute
+ * - Auswahl von Kategorien, Unterkategorien und Konten
+ * - Validierung von Eingaben und Anzeige von Fehlermeldungen
+ * - Integration in das zentrale Zustandsmanagement @class StateMgr
+ *
+ * @note Die grafische Oberfläche ist in einer `.ui`-Datei gestaltet und wird dynamisch geladen.
+ *
+ * @param parent Zeiger auf das übergeordnete QWidget (@class MainWindow)
+ * @param ptrStateMgr Zeiger auf das zentrale Zustandsobjekt (@class StateMgr)
+ */
 
 class TransactionDialog : public QWidget
 {

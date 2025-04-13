@@ -17,6 +17,24 @@ namespace core {
 class StateMgr;
 }
 class Export;
+/**
+ * @class ExportDialog
+ * @brief Stellt einen Dialog zur Auswahl und Durchführung von Datenexporten bereit.
+ *
+ * Diese Klasse stellt die Benutzeroberfläche für den Export von Datenbanktabellen oder der gesamten Datenbank bereit.
+ * Der Benutzer kann gezielt auswählen, welche Daten (z. B. Konten, Kategorien, Transaktionen) exportiert werden sollen.
+ * Die Auswahl wird an die @class Export-Logik übergeben, welche den eigentlichen Exportvorgang durchführt.
+ *
+ * Features:
+ * - Checkbox-Auswahl für Tabellenexport (Accounts, Kategorien, Subkategorien, Transaktionen)
+ * - Start des Exportvorgangs per Button
+ * - Signale zur Steuerung von `Export`-Methoden
+ *
+ * @note Die grafische Oberfläche ist in einer `.ui`-Datei gestaltet und wird dynamisch geladen.
+ *
+ * @param parent Zeiger auf das übergeordnete QWidget (@class MainWindow)
+ * @param ptrStateMgr Zeiger auf das zentrale Zustandsobjekt (@class StateMgr)
+ */
 
 class ExportDialog : public QWidget
 {

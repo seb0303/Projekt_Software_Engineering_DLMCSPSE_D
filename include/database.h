@@ -18,6 +18,31 @@
 #include "constants.h"
 
 namespace db {
+/**
+ * @class Database
+ * @brief Verwaltet die Verbindung zur SQLite-Datenbank und führt alle Datenbankoperationen aus.
+ *
+ * Diese Klasse kapselt sämtliche Zugriffe auf die SQLite-Datenbank und stellt
+ * Methoden zum Lesen, Schreiben, Aktualisieren und Löschen von Datensätzen bereit.
+ *
+ * Die Klasse unterstützt sowohl das Öffnen bestehender Datenbanken als auch das Anlegen
+ * neuer Instanzen über statische Methoden. Sie verwaltet intern Verbindungsnamen und optionale Passwortprüfung.
+ *
+ * Features:
+ * - Aufbau einer Datenbankverbindung
+ * - CRUD-Methoden für Transaktionen, Kategorien, Konten, Root
+ * - Generische Methoden für beliebige Tabellenzugriffe
+ * - Fehlerbehandlung bei Verbindungs- oder Schreibproblemen
+ *
+ * @note Die Klasse verwendet Qt SQL-Module (`QSqlDatabase`, `QSqlQuery`, `QSqlError`) und ist direkt mit @class StateMgr verknüpft.
+ *
+ * @param path Pfad zum Datenbankverzeichnis
+ * @param database_name Name der zu öffnenden oder zu erstellenden Datenbankdatei
+ * @param passwordRequired Flag, ob ein Passwort benötigt wird (z. B. bei verschlüsselter Datenbank, nicht implementiert!)
+ * @param password Optionales Passwort zur Entschlüsselung (nicht implementiert!)
+ * @param connection_name Verbindungsname für parallele Datenbankzugriffe
+ * @param parent Zeiger auf übergeordnetes QObject (@class StateMgr)
+ */
 
     class Database : public QObject
     {
