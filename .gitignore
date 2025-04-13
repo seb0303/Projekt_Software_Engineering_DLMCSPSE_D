@@ -17,7 +17,9 @@ object_script.*.Debug
 /.qmake.cache
 /.qmake.stash
 build/*
+docs/*
 !build/.gitkeep
+!docs/.gitkeep
 .DS_Store
 *.pro.user
 *.pro.user.*
