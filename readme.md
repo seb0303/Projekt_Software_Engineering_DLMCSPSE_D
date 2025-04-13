@@ -1,4 +1,5 @@
 # PennyWise Finanzmanager
+### Sebastian Uhler - 92203600; Kurs: Projekt Software Engineering DLMCSPSE_D
 
 Willkommen bei **PennyWise**, deinem persönlichen Finanzmanager! Mit PennyWise kannst du deine Finanzen übersichtlich und effizient verwalten. In diesem Hilfedialog findest du alle wichtigen Funktionen und Erklärungen zur Nutzung der Anwendung.
 
