@@ -22,6 +22,7 @@ tests/*
 !build/.gitkeep
 !docs/.gitkeep
 !tests/.gitkeep
+!db/.gitkeep
 .DS_Store
 *.pro.user
 *.pro.user.*
