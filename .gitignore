@@ -19,10 +19,11 @@ object_script.*.Debug
 build/*
 docs/*
 tests/*
+db/resources/*
 !build/.gitkeep
 !docs/.gitkeep
 !tests/.gitkeep
-!db/.gitkeep
+!db/resources/.gitkeep
 .DS_Store
 *.pro.user
 *.pro.user.*
