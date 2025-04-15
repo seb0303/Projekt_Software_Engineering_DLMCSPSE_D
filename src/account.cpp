@@ -102,6 +102,8 @@ bool Account::validate_records_(QString& type, QMap<QString, QVariant> &form_dat
         form_data["status_message"] = "Format bei Betrag nicht eingehalten. Betrag muss dem deutschen Format entsprechen (Beispiel: 76, 102,37 oder 1.234,56)";
         return false;
     }
+    // Auf das amerikanische Zahlenformat anpassen
+    form_data["opening_balance"] = form_data["opening_balance"].toString().replace(",", ".");
 
     return true;
 }

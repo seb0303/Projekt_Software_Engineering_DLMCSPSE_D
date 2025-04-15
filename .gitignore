@@ -18,8 +18,10 @@ object_script.*.Debug
 /.qmake.stash
 build/*
 docs/*
+tests/*
 !build/.gitkeep
 !docs/.gitkeep
+!tests/.gitkeep
 .DS_Store
 *.pro.user
 *.pro.user.*

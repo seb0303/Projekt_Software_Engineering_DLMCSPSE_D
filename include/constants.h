@@ -25,7 +25,7 @@
 
 namespace constants {
 
-    constexpr bool DEBUG = true;
+    constexpr bool DEBUG = false;
 
     // Datenbankkonstanten
     inline const QString ROOT = QStringLiteral(".");

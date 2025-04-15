@@ -10,6 +10,7 @@
 
 #include "include/welcomescreenDialog.h"
 #include "include/init.h"
+#include "include/constants.h"
 
 /**
  * @file main.cpp
@@ -38,9 +39,10 @@ void logHandler(QtMsgType type, const QMessageLogContext &context, const QString
     QTextStream out(&logFile);
     QString time = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss");
     QString logMsg = QString("[%1] %2").arg(time, msg);
-
-    out << logMsg << Qt::endl;
-    out.flush();
+    if (constants::DEBUG){
+        out << logMsg << Qt::endl;
+        out.flush();
+    }
 }
 
 int main(int argc, char *argv[])

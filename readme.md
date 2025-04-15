@@ -38,10 +38,7 @@ PennyWise bietet dir verschiedene Report-Funktionen zur Analyse deiner Finanzen:
 
 Nutze die Suchleiste, um Transaktionen schnell zu finden. Gib einen beliebigen Text ein, und die Tabelle filtert alle passenden Einträge in Echtzeit.
 
-## 6. Sicherheit
 
-PennyWise speichert deine Daten verschlüsselt, sofern SQLCipher aktiviert ist (Info: SqlCipher ist in dieser Version nicht vorhanden, alle Daten werden unverschlüsselt gespeichert). Du kannst beim Erstellen einer Datenbank ein Passwort setzen, das zur Entschlüsselung benötigt wird.
-
-## 7. Weitere Hinweise
+## 6. Weitere Hinweise
 
 PennyWise speichert alle Änderungen automatisch. Dennoch empfiehlt es sich, regelmäßig Backups deiner Datenbanken zu erstellen. Du findest diese Funktion unter „Datei > Backup speichern“.
